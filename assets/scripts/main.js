@@ -1,7 +1,7 @@
 //navigation focus and hover
 
 document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('#header, #about, #resume, #project, #contact');
+    const sections = document.querySelectorAll('#header, #about, #skill, #project, #contact');
     const navLinks = document.querySelectorAll('.main-navigation ul li a');
 
     const observer = new IntersectionObserver(entries => {
@@ -22,3 +22,11 @@ function toggleNav() {
     const nav = document.querySelector('.main-navigation ul');
     nav.classList.toggle('show');
 }
+
+
+const hamburgerIcon = document.getElementById('hamburger-icon');
+hamburgerIcon.addEventListener('click', toggleNav);
+
+let skillPercent = document.querySelector('.skill-percent');
+let width = window.getComputedStyle(skillPercent).getPropertyValue('width');
+skillPercent.setAttribute('per', width);
